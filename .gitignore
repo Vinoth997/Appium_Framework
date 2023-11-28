@@ -1,0 +1,8 @@
+# Ignore Eclipse IDE project files
+.settings
+.classpath
+.project
+
+# Ignore build-related directories
+target
+/test-output
