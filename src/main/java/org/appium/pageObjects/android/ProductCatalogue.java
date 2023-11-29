@@ -2,7 +2,7 @@ package org.appium.pageObjects.android;
 
 import java.util.List;
 
-import org.appium.utils.AndroidActions;
+import org.appium.utils.android.AndroidActions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 

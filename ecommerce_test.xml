@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="EcommerceSuite">
-  <test thread-count="5" name="EcommerceTest">
-    <classes>
-      <class name="org.appium.test.ecommerce_test"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
-
+	<test thread-count="5" name="EcommerceTest">
+		<classes>
+			<class name="org.appium.test.Ecommerce_test" />
+		</classes>
+	</test>
+</suite> 

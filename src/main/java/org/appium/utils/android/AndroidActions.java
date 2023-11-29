@@ -1,8 +1,9 @@
-package org.appium.utils;
+package org.appium.utils.android;
 
 import java.util.Collections;
 import java.util.List;
 
+import org.appium.utils.common.AppiumUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -13,11 +14,12 @@ import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
-public class AndroidActions {
+public class AndroidActions extends AppiumUtils {
 
 	AndroidDriver driver;
 
 	public AndroidActions(AndroidDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 
@@ -128,5 +130,4 @@ public class AndroidActions {
 		}
 		element.click();
 	}
-
 }

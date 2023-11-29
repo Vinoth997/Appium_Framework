@@ -1,11 +1,13 @@
-package org.appium.test;
+package org.appium.android.test;
 
+import org.appium.pageObjects.android.CartPage;
 import org.appium.pageObjects.android.FormPage;
 import org.appium.pageObjects.android.ProductCatalogue;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ecommerce_test extends BaseTest{
-	
+public class Ecommerce_test extends AndroidBaseTest {
+
 	@Test
 	public void FillForm() {
 		FormPage formPage = new FormPage(driver);
@@ -14,7 +16,7 @@ public class ecommerce_test extends BaseTest{
 		formPage.setCountry("Argentina");
 		formPage.submitForm();
 	}
-	
+
 	@Test(dependsOnMethods = "FillForm")
 	public void AddToCart() throws InterruptedException {
 		ProductCatalogue productCatalogue = new ProductCatalogue(driver);
@@ -23,4 +25,13 @@ public class ecommerce_test extends BaseTest{
 		productCatalogue.goToCartPage();
 	}
 
+	@Test(dependsOnMethods = "AddToCart")
+	public void CartPage() throws InterruptedException {
+		CartPage cartPage = new CartPage(driver);
+		double priceTotal = cartPage.getProductsSum();
+		double totalAmountDisplayed = cartPage.getTotalAmountDisplayed();
+		Assert.assertEquals(priceTotal, totalAmountDisplayed);
+		cartPage.acceptTermsConditions();
+		cartPage.submitOrder();
+	}
 }
