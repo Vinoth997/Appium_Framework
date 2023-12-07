@@ -47,13 +47,13 @@ public class FormPage extends AndroidActions {
 			genderFemale.click();
 		}
 	}
-	
+
 	public void setCountry(String countryName) {
 		countryDropDown.click();
 		scrollToText(countryName);
-		driver.findElement(By.xpath("//android.widget.TextView[@text='"+countryName+"']")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@text='" + countryName + "']")).click();
 	}
-	
+
 	public void submitForm() {
 		shopButton.click();
 	}

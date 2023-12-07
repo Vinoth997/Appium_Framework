@@ -4,16 +4,22 @@ import org.appium.pageObjects.android.CartPage;
 import org.appium.pageObjects.android.FormPage;
 import org.appium.pageObjects.android.ProductCatalogue;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class Ecommerce_test extends AndroidBaseTest {
 
-	@Test
-	public void FillForm() {
+	@DataProvider
+	public Object[][] getData() {
+		return new Object[][] { { "Testing", "Male", "Argentina" } };
+	}
+
+	@Test(dataProvider = "getData")
+	public void FillForm(String name, String gender, String country) {
 		FormPage formPage = new FormPage(driver);
-		formPage.setNameField("Testing");
-		formPage.setGender("Male");
-		formPage.setCountry("Argentina");
+		formPage.setNameField(name);
+		formPage.setGender(gender);
+		formPage.setCountry(country);	
 		formPage.submitForm();
 	}
 

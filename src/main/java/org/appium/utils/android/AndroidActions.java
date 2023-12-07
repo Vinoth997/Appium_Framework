@@ -117,7 +117,7 @@ public class AndroidActions extends AppiumUtils {
 		int productCount = driver.findElements(listLocator).size();
 		for (int i = 0; i < productCount; i++) {
 			String productName = driver.findElements(listLocator).get(i).getText();
-			if (productName.equalsIgnoreCase("Jordan 6 Rings")) {
+			if (productName.equalsIgnoreCase(nameToFind)) {
 				driver.findElements(clickLocator).get(i).click();
 			}
 		}

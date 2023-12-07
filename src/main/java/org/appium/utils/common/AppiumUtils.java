@@ -21,9 +21,18 @@ public class AppiumUtils {
 		return price;
 	}
 
-	public void waitForElementToAppear(WebElement element) {
+	public void waitForElementToBeVisible(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
+	public void waitForElementToBeClickable(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	public void waitForElementToBeInvisible(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOf(element));
+	}
 }
