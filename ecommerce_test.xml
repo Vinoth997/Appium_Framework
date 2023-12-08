@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="EcommerceSuite">
+	<listeners>
+		<listener class-name="org.appium.testUtils.Listeners"></listener>
+	</listeners>
 	<test thread-count="5" name="EcommerceTest">
 		<classes>
-			<class name="org.appium.test.Ecommerce_test" />
+			<class name="org.appium.android.test.Ecommerce_test" />
 		</classes>
 	</test>
 </suite> 

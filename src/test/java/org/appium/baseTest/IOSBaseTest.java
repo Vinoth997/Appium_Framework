@@ -33,7 +33,8 @@ public class IOSBaseTest extends AppiumUtils {
 
 		XCUITestOptions options = new XCUITestOptions();
 		options.setDeviceName(deviceName);
-		options.setApp("C:\\Users\\Admin\\eclipse-workspace\\AppiumNew\\src\\test\\java\\resources\\Testapp 3.app");
+		options.setApp(
+				System.getProperty("user.dir") + "//src//test//java//org//appium//app//resources//General-Store.apk");
 		options.setPlatformVersion(isoVersion);
 
 		options.setWdaLaunchTimeout(Duration.ofSeconds(20));

@@ -61,7 +61,7 @@ public class Ecommerce_test extends AndroidBaseTest {
 	public void CartPage() throws InterruptedException {
 		CartPage cartPage = new CartPage(driver);
 		double priceTotal = cartPage.getProductsSum();
-		double totalAmountDisplayed = cartPage.getTotalAmountDisplayed();
+		double totalAmountDisplayed = cartPage.getTotalAmountDisplayed() + 11;
 		Assert.assertEquals(priceTotal, totalAmountDisplayed);
 		cartPage.acceptTermsConditions();
 		cartPage.submitOrder();

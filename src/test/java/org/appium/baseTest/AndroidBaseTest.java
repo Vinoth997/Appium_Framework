@@ -35,7 +35,8 @@ public class AndroidBaseTest extends AppiumUtils {
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName(deviceName);
 		options.setChromedriverExecutable("D:\\Driver\\chromedriver\\chromedriver_83.exe");
-		options.setApp("C:\\Users\\Admin\\eclipse-workspace\\AppiumNew\\src\\test\\java\\resources\\General-Store.apk");
+		options.setApp(
+				System.getProperty("user.dir") + "//src//test//java//org//appium//app//resources//General-Store.apk");
 //		driver = new AndroidDriver(new URL("http://0.0.0.0:4723"), options);
 		driver = new AndroidDriver(service.getUrl(), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
