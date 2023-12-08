@@ -1,5 +1,6 @@
 package org.appium.ios.test;
 
+import org.appium.baseTest.IOSBaseTest;
 import org.appium.pageObjects.ios.AlertViews;
 import org.testng.Assert;
 import org.testng.annotations.Test;
