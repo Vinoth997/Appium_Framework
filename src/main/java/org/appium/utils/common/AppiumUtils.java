@@ -3,7 +3,6 @@ package org.appium.utils.common;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
@@ -73,7 +72,7 @@ public class AppiumUtils {
 	
 	public String getScreenShotPath(String testCaseName, AppiumDriver driver) throws IOException {
 		File source = driver.getScreenshotAs(OutputType.FILE);
-		String destinationFile = System.getProperty("user.dir") + "//screenshots//"+testCaseName+".png";
+		String destinationFile = System.getProperty("user.dir") + "/screenshots/"+testCaseName+".png";
 		FileUtils.copyFile(source, new File(destinationFile));
 		return destinationFile;
 	}

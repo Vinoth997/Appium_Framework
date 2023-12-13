@@ -20,7 +20,7 @@ public class AndroidBaseTest extends AppiumUtils {
 	public AppiumDriverLocalService service;
 	public WebDriverWait wait;
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void configureAppiumService() throws IOException {
 		Properties property = new Properties();
 		FileInputStream fis = new FileInputStream(
@@ -42,7 +42,7 @@ public class AndroidBaseTest extends AppiumUtils {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		driver.quit();
 		service.stop();

@@ -31,7 +31,7 @@ public class Ecommerce_test extends AndroidBaseTest {
 		return new Object[][] { { data.get(0) } };
 	}
 
-	@Test(dataProvider = "getJsonData", enabled = true)
+	@Test(dataProvider = "getJsonData", enabled = true, groups = { "smoke" })
 	public void FillForm(HashMap<String, String> input) {
 		FormPage formPage = new FormPage(driver);
 		formPage.setNameField(input.get("name"));
@@ -60,8 +60,8 @@ public class Ecommerce_test extends AndroidBaseTest {
 	@Test(dependsOnMethods = "AddToCart")
 	public void CartPage() throws InterruptedException {
 		CartPage cartPage = new CartPage(driver);
-		double priceTotal = cartPage.getProductsSum();
-		double totalAmountDisplayed = cartPage.getTotalAmountDisplayed() + 11;
+		double priceTotal = cartPage.getProductsSum() + 11;
+		double totalAmountDisplayed = cartPage.getTotalAmountDisplayed();
 		Assert.assertEquals(priceTotal, totalAmountDisplayed);
 		cartPage.acceptTermsConditions();
 		cartPage.submitOrder();
