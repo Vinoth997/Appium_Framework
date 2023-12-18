@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="5">
+	<test name="Test1">
+		<classes>
+			<class name="wayMore.wayMore">
+				<methods>
+					<include name="open"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test2">
+		<classes>
+			<class name="org.appium.android.test.Ecommerce_test"></class>
+		</classes>
+	</test>
+</suite>
